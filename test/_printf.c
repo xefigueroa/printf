@@ -5,7 +5,7 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
-char *convert(unsigned int num, int base);
+void convert(unsigned int num, int base);
 
 /**
  * _printf - prints stuff :D
