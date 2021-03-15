@@ -2,60 +2,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 
-int _printf(char *format, ...);
+int _printf(const char *format, ...);
 char *convert(unsigned int num, int base);
 
 /**
- *
- *
+ * _printf - prints stuff :D
+ * @format: output modifier to be used
+ * Return: Always 0 (Success)
  *
  */
-int _printf(char *format, ...)
+int _printf(const char *format, ...)
 {
-	char *trv;
-	unsigned int i;
-	char *s;
+	unsigned int idx;
 
 	va_list arg;
 	va_start(arg, format);
 
-	for (trv = format; *trv != '\0'; trv++)
+	idx = 0;
+	while (idx < strlen(format))
 	{
-		while(*trv != '%')
+		while(format[idx] != '%')
 		{
-			putchar(*trv);
-			trv++;
+			putchar(format[idx]);
+			idx++;
 		}
-		trv++;
+		if (format[idx] == '%')
+			idx++;
 
-		switch(*trv)
+		switch(format[idx])
 		{
-			case 'c' : i = va_arg(arg,int);
-					   putchar(i);
+			case 'c' : putchar(va_arg(arg, int));
 					   break;
 
-			case 'd' : i = va_arg(arg,int);
-					   /* if(i < 0)
-					   {
-						   i = -i;
-						   putchar('-');
-					   } */
-					   puts(convert(i,10));
+			case 'd' : convert(va_arg(arg, int), 10);
 					   break;
 
-			case 'o' : i = va_arg(arg,unsigned int);
-					   puts(convert(i,8));
+			case 'o' : convert(va_arg(arg, int), 8);
 					   break;
 
-			case 's' : s = va_arg(arg,char *);
-					   puts(s);
+			case 's' : puts(va_arg(arg,char *));
 					   break;
 
-			case 'x' : i = va_arg(arg,unsigned int);
-					   puts(convert(i,16));
+			case 'x' : convert(va_arg(arg,unsigned int), 16);
 					   break;
+
+			default:
+					   continue;
 		}
+		idx++;
 	}
 
 	va_end(arg);

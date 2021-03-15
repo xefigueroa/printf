@@ -9,7 +9,8 @@
  */
 char *convert(unsigned int num, int base)
 {
-	static char rep[] = "0123456789ABCDEF";
+	/* static char top[] = "0123456789ABCDEF"; */
+	static char bot[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *ptr;
 
@@ -18,7 +19,7 @@ char *convert(unsigned int num, int base)
 
 	do
 	{
-		*--ptr = rep[num % base];
+		*--ptr = bot[num % base];
 		num /= base;
 	}while(num != 0);
 
