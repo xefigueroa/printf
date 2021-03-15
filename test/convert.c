@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 /**
  *
  *
  *
  */
-char *convert(unsigned int num, int base)
+void convert(unsigned int num, int base)
 {
 	/* static char top[] = "0123456789ABCDEF"; */
 	static char bot[] = "0123456789ABCDEF";
@@ -23,5 +24,5 @@ char *convert(unsigned int num, int base)
 		num /= base;
 	}while(num != 0);
 
-	return(ptr);
+	puts(ptr);
 }

@@ -2,6 +2,6 @@
 #define _HOLBERTON_H_
 
 int _printf(const char *format, ...);
-char *convert(unsigned int num, int base);
+void convert(unsigned int num, int base);
 
 #endif
