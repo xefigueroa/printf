@@ -23,10 +23,6 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	if (arg == NULL)
-		return (-1);
-
-
 	idx = str = 0;
 	while (idx < _strlen(format))
 	{
