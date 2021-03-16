@@ -10,12 +10,16 @@
 int _strlen(const char *s)
 {
 	int v;
+	char i;
 
 	v = 0;
-	while (*s++)
+	i = 'n';
+
+	while (i != '\0')
 	{
+		i = s[v];
 		v++;
 	}
 
-	return (v);
+	return (v - 1);
 }

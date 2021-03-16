@@ -15,7 +15,7 @@ int convert(unsigned int num, int base);
  */
 int _printf(const char *format, ...)
 {
-	int idx, str;
+	int idx, str, i;
 
 	va_list arg;
 
@@ -28,16 +28,25 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[idx]);
 			idx++;
+			str++;
 		}
 		if (format[idx] == '%')
+		{
 			idx++;
+		}
 		switch (format[idx])
 		{
 			case 'c':
 				str = _putchar(va_arg(arg, int));
 				break;
 			case 'd':
-				str = convert(va_arg(arg, int), 10);
+				i = va_arg(arg, int);
+				if (i < 0)
+				{
+					i = -i;
+					_putchar('-');
+				}
+				str = convert(i, 10);
 				break;
 			case 'o':
 				str = convert(va_arg(arg, int), 8);
@@ -58,6 +67,7 @@ int _printf(const char *format, ...)
 				continue;
 		}
 		idx++;
+		str++;
 	}
 
 	va_end(arg);

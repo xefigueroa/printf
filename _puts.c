@@ -9,12 +9,14 @@
 
 int _puts(char *str)
 {
-	int v;
-	int str1 = 0;
+	int v, str1;
 
-	for (v = 0; str[v]; str++, v++)
+	v = str1 = 0;
+	while (str[v])
 	{
 		_putchar(str[v]);
+		v++;
+		str1++;
 	}
 	return (str1);
 }
