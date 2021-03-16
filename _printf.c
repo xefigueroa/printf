@@ -45,6 +45,7 @@ int _printf(const char *format, ...)
 				{
 					i = -i;
 					_putchar('-');
+					str++;
 				}
 				str += convert(i, 10, 0);
 				break;
@@ -66,6 +67,7 @@ int _printf(const char *format, ...)
 				{
 					i = -i;
 					_putchar('-');
+					str++;
 				}
 				str += convert(i, 10, 0);
 				break;
