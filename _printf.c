@@ -23,6 +23,9 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
+	if (arg == NULL)
+		return (-1);
+
 
 	idx = str = 0;
 	while (idx < _strlen(format))
@@ -33,6 +36,14 @@ int _printf(const char *format, ...)
 			idx++;
 			str++;
 		}
+		if (format[idx] == '%' && (format[idx + 1] == 'c' || format[idx + 1] == 'd'
+					|| format[idx + 1] == 'o' || format[idx + 1] == 's'
+					|| format[idx + 1] == 'x'
+					|| format[idx + 1] == 'X' || format[idx + 1] == 'o'
+					|| format[idx + 1] == 'u'
+					|| format[idx + 1] == 'i' || format[idx + 1] == '%'
+					|| format[idx + 1] == 'b'))
+			idx++;
 		if (format[idx] == '%')
 		{
 			idx++;
