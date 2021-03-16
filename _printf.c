@@ -10,7 +10,7 @@ int convert(unsigned int num, int base, int cap);
 /**
  * _printf - prints stuff :D
  * @format: output modifier to be used
- * Return: Always 0 (Success)
+ * Return: str - gives length and stores arguments in cases
  *
  */
 int _printf(const char *format, ...)
@@ -18,8 +18,10 @@ int _printf(const char *format, ...)
 	int idx, str, i;
 
 	va_list arg;
-
 	va_start(arg, format);
+	if (format == NULL)
+		return (-1);
+
 
 	idx = str = 0;
 	while (idx < _strlen(format))
