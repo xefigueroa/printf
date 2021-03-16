@@ -3,9 +3,9 @@
 .B _printf
 .SH SYNOPSIS
 .B _printf
-Holberton Group Project to write our own printf function.
+Holberton Group Project to write an implementation of our own printf function.
 .SH DESCRIPTION
-Recreation of printf function following Holberton School specifications.
+Recreation of printf function, following Holberton School specifications, from the standard library. _printf() will generate an output based on a format specified and will write the output into the standard output.
 .PP
 .B Some of the general requirements are:
 
@@ -22,6 +22,34 @@ Recreation of printf function following Holberton School specifications.
     All your header files should be include guarded
     Note that we will not provide the _putchar function for this project
 
+.B Authorized functions and macros:
+
+    write (man 2 write)
+    malloc (man 3 malloc)
+    free (man 3 free)
+    va_start (man 3 va_start)
+    va_end (man 3 va_end)
+    va_copy (man 3 va_copy)
+    va_arg (man 3 va_arg)
+
+.B Conversion Specifiers:
+.PP
+	A character that specifies the type of conversion to be applied.  The conversion specifiers used in our function are:
+
+.B 		%c
+- Prints a character.
+
+.B 		%s
+- Prints a string.
+
+.B 		&&
+- Prints a % (Percentage or modulo sign).
+
+.B 		%d
+- Prints a signed decimal integer.
+
+.B 		%i
+- Prints a integer.
 
 .SH OPTIONS
 .SH EXAMPLES
