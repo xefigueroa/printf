@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	int idx, str, i;
 
 	va_list arg;
+
 	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
