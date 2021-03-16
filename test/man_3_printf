@@ -1,11 +1,14 @@
-.TH _PRINTF 3 "March 2021" "0.1" "_PRINTF MAN PAGE"
+.TH _PRINTF 3 "March 2021" "0.3" "_PRINTF MAN PAGE"
 .SH NAME
 .B _printf
 .SH SYNOPSIS
-.B _printf
-Holberton Group Project to write an implementation of our own printf function.
+.BI "int _printf(const char *"format ", ...);
+
+Whereas [format] contains the conversion specifier or format to print output and [...] are the number of arguments included to variadic function.
+
+Holberton Group Project to write an implementation of our own printf function. Produces formatted output.
 .SH DESCRIPTION
-Recreation of printf function, following Holberton School specifications, from the standard library. _printf() will generate an output based on a format specified and will write the output into the standard output.
+Recreation of printf function, following Holberton School specifications, from the standard library. _printf() will generate an output based on a format specified and will write the output into the standard output. Header file "holberton.h" necessary to use function.
 .PP
 .B Some of the general requirements are:
 
@@ -42,7 +45,7 @@ Recreation of printf function, following Holberton School specifications, from t
 .B 		%s
 - Prints a string.
 
-.B 		&&
+.B 		%%
 - Prints a % (Percentage or modulo sign).
 
 .B 		%d
