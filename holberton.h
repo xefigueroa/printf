@@ -10,5 +10,6 @@ int _puts(char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int convert(unsigned int num, int base, int cap);
+char *rot13(char *s);
 
 #endif
