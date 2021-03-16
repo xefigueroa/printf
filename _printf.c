@@ -58,7 +58,13 @@ int _printf(const char *format, ...)
 				str += convert(va_arg(arg, unsigned int), 16);
 				break;
 			case 'i':
-				str += convert(va_arg(arg, int), 10);
+				i = va_arg(arg, int);
+				if (i < 0)
+				{
+					i = -i;
+					_putchar('-');
+				}
+				str += convert(i, 10);
 				break;
 			case '%':
 				str += _puts("%");
