@@ -18,44 +18,44 @@ int _printf(const char *format, ...)
 	int idx;
 
 	va_list arg;
+
 	va_start(arg, format);
 
 	idx = 0;
 	while (idx < _strlen(format))
 	{
-		while(format[idx] != '%' && idx < _strlen(format))
+		while (format[idx] != '%' && idx < _strlen(format))
 		{
 			_putchar(format[idx]);
 			idx++;
 		}
 		if (format[idx] == '%')
 			idx++;
-
-		switch(format[idx])
+		switch (format[idx])
 		{
-			case 'c' : _putchar(va_arg(arg, int));
-					   break;
-
-			case 'd' : convert(va_arg(arg, int), 10);
-					   break;
-
-			case 'o' : convert(va_arg(arg, int), 8);
-					   break;
-
-			case 's' : _puts(va_arg(arg,char *));
-					   break;
-
-			case 'x' : convert(va_arg(arg,unsigned int), 16);
-					   break;
-
-			case 'i' : convert(va_arg(arg, int), 10);
-					   break;
-
-			case '%' : _puts("%");
-					   break;
-
+			case 'c':
+				_putchar(va_arg(arg, int));
+				break;
+			case 'd':
+				convert(va_arg(arg, int), 10);
+				break;
+			case 'o':
+				convert(va_arg(arg, int), 8);
+				break;
+			case 's':
+				_puts(va_arg(arg, char *));
+				break;
+			case 'x':
+				convert(va_arg(arg, unsigned int), 16);
+				break;
+			case 'i':
+				convert(va_arg(arg, int), 10);
+				break;
+			case '%':
+				_puts("%");
+				break;
 			default:
-					   continue;
+				continue;
 		}
 		idx++;
 	}
