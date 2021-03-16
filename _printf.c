@@ -6,6 +6,7 @@
 
 int _printf(const char *format, ...);
 int convert(unsigned int num, int base, int cap);
+char *rot13(char *s);
 
 /**
  * _printf - prints stuff :D
@@ -86,6 +87,8 @@ int _printf(const char *format, ...)
 			case 'b':
 				str += convert(va_arg(arg, int), 2, 0);
 				break;
+			case 'R':
+				str += _puts(rot13(va_arg(arg, char *)));
 			default:
 				continue;
 		}
