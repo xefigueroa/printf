@@ -11,7 +11,7 @@
  */
 int convert(unsigned int num, int base)
 {
-	static const char bot[] = "0123456789ABCDEF";
+	static const char bot[] = "0123456789abcdef";
 	static char buffer[50];
 	char *ptr;
 	int str = 0;

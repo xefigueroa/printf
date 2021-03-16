@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 		switch (format[idx])
 		{
 			case 'c':
-				str = _putchar(va_arg(arg, int));
+				str += _putchar(va_arg(arg, int));
 				break;
 			case 'd':
 				i = va_arg(arg, int);
@@ -46,28 +46,27 @@ int _printf(const char *format, ...)
 					i = -i;
 					_putchar('-');
 				}
-				str = convert(i, 10);
+				str += convert(i, 10);
 				break;
 			case 'o':
-				str = convert(va_arg(arg, int), 8);
+				str += convert(va_arg(arg, int), 8);
 				break;
 			case 's':
-				str = _puts(va_arg(arg, char *));
+				str += _puts(va_arg(arg, char *));
 				break;
 			case 'x':
-				str = convert(va_arg(arg, unsigned int), 16);
+				str += convert(va_arg(arg, unsigned int), 16);
 				break;
 			case 'i':
-				str = convert(va_arg(arg, int), 10);
+				str += convert(va_arg(arg, int), 10);
 				break;
 			case '%':
-				str = _puts("%");
+				str += _puts("%");
 				break;
 			default:
 				continue;
 		}
 		idx++;
-		str++;
 	}
 
 	va_end(arg);
