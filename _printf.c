@@ -40,10 +40,6 @@ int _printf(const char *format, ...)
 					|| format[idx + 1] == 'i' || format[idx + 1] == '%'
 					|| format[idx + 1] == 'b'))
 			idx++;
-		if (format[idx] == '%')
-		{
-			idx++;
-		}
 		switch (format[idx])
 		{
 			case 'c':
