@@ -24,5 +24,5 @@ void convert(unsigned int num, int base)
 		num /= base;
 	}while(num != 0);
 
-	puts(ptr);
+	_puts(ptr);
 }

@@ -15,17 +15,17 @@ void convert(unsigned int num, int base);
  */
 int _printf(const char *format, ...)
 {
-	unsigned int idx;
+	int idx;
 
 	va_list arg;
 	va_start(arg, format);
 
 	idx = 0;
-	while (idx < strlen(format))
+	while (idx < _strlen(format))
 	{
-		while(format[idx] != '%')
+		while(format[idx] != '%' && idx < _strlen(format))
 		{
-			putchar(format[idx]);
+			_putchar(format[idx]);
 			idx++;
 		}
 		if (format[idx] == '%')
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 
 		switch(format[idx])
 		{
-			case 'c' : putchar(va_arg(arg, int));
+			case 'c' : _putchar(va_arg(arg, int));
 					   break;
 
 			case 'd' : convert(va_arg(arg, int), 10);
@@ -42,10 +42,16 @@ int _printf(const char *format, ...)
 			case 'o' : convert(va_arg(arg, int), 8);
 					   break;
 
-			case 's' : puts(va_arg(arg,char *));
+			case 's' : _puts(va_arg(arg,char *));
 					   break;
 
 			case 'x' : convert(va_arg(arg,unsigned int), 16);
+					   break;
+
+			case 'i' : convert(va_arg(arg, int), 10);
+					   break;
+
+			case '%' : _puts("%");
 					   break;
 
 			default:
