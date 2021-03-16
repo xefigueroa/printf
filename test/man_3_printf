@@ -51,10 +51,31 @@ Recreation of printf function, following Holberton School specifications, from t
 .B 		%i
 - Prints a integer.
 
+.B 		%b
+- Prints an unsigned int converted to binary.
+
+.B 		%u
+- Prints unsigned decimal integer.
+
+.B 		%o
+- Prints number converted to octal.
+
+.B 		%x
+- Prints number converted to hexadecimal (lowercase).
+
+.B 		%X
+- Prints number converted to hexadecimal (uppercase).
+
 .SH OPTIONS
 .SH EXAMPLES
-.SH EXIT VALUES
+.SH RETURN/EXIT VALUES
+if format == NULL then _printf() returns -1. Otherwise it will return length of stting or conversion specifier.
+
 .SH SEE ALSO
+.I printf(3), stdarg(3)
+
 .SH BUGS
+Two checkers are missing from task 0 of proyect printf. Further research required. Will update promptly.
+
 .SH AUTHOR
 David Harvey & Xavier Figueroa
