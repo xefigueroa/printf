@@ -9,11 +9,12 @@
  * @base: base to convert to
  * Return: prints result
  */
-void convert(unsigned int num, int base)
+int convert(unsigned int num, int base)
 {
 	static const char bot[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *ptr;
+	int str = 0;
 
 	ptr = &buffer[49];
 	*ptr = '\0';
@@ -23,5 +24,7 @@ void convert(unsigned int num, int base)
 		num /= base;
 	} while (num != 0);
 
-	_puts(ptr);
+	str = _puts(ptr);
+
+	return (str);
 }

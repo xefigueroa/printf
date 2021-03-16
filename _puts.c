@@ -7,13 +7,14 @@
  * Return: void.
  */
 
-void _puts(char *str)
+int _puts(char *str)
 {
 	int v;
+	int str1 = 0;
 
-	for (v = 0; str[v]; v++)
+	for (v = 0; str[v]; str++, v++)
 	{
 		_putchar(str[v]);
 	}
-	_putchar('\n');
+	return (str1);
 }

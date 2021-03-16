@@ -5,7 +5,7 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
-void convert(unsigned int num, int base);
+int convert(unsigned int num, int base);
 
 /**
  * _printf - prints stuff :D
@@ -15,13 +15,13 @@ void convert(unsigned int num, int base);
  */
 int _printf(const char *format, ...)
 {
-	int idx;
+	int idx, str;
 
 	va_list arg;
 
 	va_start(arg, format);
 
-	idx = 0;
+	idx = str = 0;
 	while (idx < _strlen(format))
 	{
 		while (format[idx] != '%' && idx < _strlen(format))
@@ -34,25 +34,25 @@ int _printf(const char *format, ...)
 		switch (format[idx])
 		{
 			case 'c':
-				_putchar(va_arg(arg, int));
+				str = _putchar(va_arg(arg, int));
 				break;
 			case 'd':
-				convert(va_arg(arg, int), 10);
+				str = convert(va_arg(arg, int), 10);
 				break;
 			case 'o':
-				convert(va_arg(arg, int), 8);
+				str = convert(va_arg(arg, int), 8);
 				break;
 			case 's':
-				_puts(va_arg(arg, char *));
+				str = _puts(va_arg(arg, char *));
 				break;
 			case 'x':
-				convert(va_arg(arg, unsigned int), 16);
+				str = convert(va_arg(arg, unsigned int), 16);
 				break;
 			case 'i':
-				convert(va_arg(arg, int), 10);
+				str = convert(va_arg(arg, int), 10);
 				break;
 			case '%':
-				_puts("%");
+				str = _puts("%");
 				break;
 			default:
 				continue;
@@ -61,5 +61,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(arg);
-	return (0);
+	return (str);
 }
