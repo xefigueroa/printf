@@ -5,7 +5,7 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
-int convert(unsigned int num, int base);
+int convert(unsigned int num, int base, int cap);
 
 /**
  * _printf - prints stuff :D
@@ -46,16 +46,19 @@ int _printf(const char *format, ...)
 					i = -i;
 					_putchar('-');
 				}
-				str += convert(i, 10);
+				str += convert(i, 10, 0);
 				break;
 			case 'o':
-				str += convert(va_arg(arg, int), 8);
+				str += convert(va_arg(arg, int), 8, 0);
 				break;
 			case 's':
 				str += _puts(va_arg(arg, char *));
 				break;
 			case 'x':
-				str += convert(va_arg(arg, unsigned int), 16);
+				str += convert(va_arg(arg, unsigned int), 16, 0);
+				break;
+			case 'X':
+				str += convert(va_arg(arg, unsigned int), 16, 1);
 				break;
 			case 'i':
 				i = va_arg(arg, int);
@@ -64,13 +67,16 @@ int _printf(const char *format, ...)
 					i = -i;
 					_putchar('-');
 				}
-				str += convert(i, 10);
+				str += convert(i, 10, 0);
 				break;
 			case '%':
 				str += _puts("%");
 				break;
+			case 'u':
+				str += convert(va_arg(arg, int), 10, 0);
+				break;
 			case 'b':
-				str += convert(va_arg(arg, int), 2);
+				str += convert(va_arg(arg, int), 2, 0);
 				break;
 			default:
 				continue;

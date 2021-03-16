@@ -9,6 +9,6 @@ int _strlen(const char *s);
 int _puts(char *str);
 int _putchar(char c);
 int _printf(const char *format, ...);
-int convert(unsigned int num, int base);
+int convert(unsigned int num, int base, int cap);
 
 #endif
