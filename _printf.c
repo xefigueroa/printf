@@ -69,6 +69,9 @@ int _printf(const char *format, ...)
 			case '%':
 				str += _puts("%");
 				break;
+			case 'b':
+				str += convert(va_arg(arg, int), 2);
+				break;
 			default:
 				continue;
 		}
