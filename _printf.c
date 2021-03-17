@@ -1,8 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
 
 int _printf(const char *format, ...);
 int convert(unsigned int num, int base, int cap);

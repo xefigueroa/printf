@@ -1,8 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
+
 /**
  * convert - converts a number to base X
  * @num: number to be converted
