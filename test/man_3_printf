@@ -2,11 +2,13 @@
 .SH NAME
 .B _printf
 .SH SYNOPSIS
+.B #include  """holberton.h""
+
 .BI "int _printf(const char *"format ", ...);
 
-Whereas [format] contains the conversion specifier or format to print output and [...] are the number of arguments included to variadic function.
+	Whereas [format] contains the conversion specifier or format to print output and [...] are the number of arguments included to variadic function.
 
-Holberton Group Project to write an implementation of our own printf function. Produces formatted output.
+	Holberton Group Project to write an implementation of our own printf function. Produces formatted output.
 .SH DESCRIPTION
 Recreation of printf function, following Holberton School specifications, from the standard library. _printf() will generate an output based on a format specified and will write the output into the standard output. Header file "holberton.h" necessary to use function.
 .PP
@@ -35,6 +37,7 @@ Recreation of printf function, following Holberton School specifications, from t
     va_copy (man 3 va_copy)
     va_arg (man 3 va_arg)
 
+.SH OPTIONS
 .B Conversion Specifiers:
 .PP
 	A character that specifies the type of conversion to be applied.  The conversion specifiers used in our function are:
@@ -69,8 +72,23 @@ Recreation of printf function, following Holberton School specifications, from t
 .B 		%X
 - Prints number converted to hexadecimal (uppercase).
 
-.SH OPTIONS
 .SH EXAMPLES
+.PP
+
+int main(void)
+
+{
+
+	int var
+
+	var = _printf("Hello");
+
+	_printf("%d\n", var);
+
+	return (0);
+
+}
+
 .SH RETURN/EXIT VALUES
 if format == NULL then _printf() returns -1. Otherwise it will return length of stting or conversion specifier.
 
