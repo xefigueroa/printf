@@ -88,7 +88,7 @@ int _printf(const char *format, ...)
 				str += convert(va_arg(arg, int), 2, 0);
 				break;
 			case 'R':
-				str += rot13(va_arg(arg, char *));
+				str += _puts(rot13(va_arg(arg, char *)));
 			default:
 				continue;
 		}
