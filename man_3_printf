@@ -1,6 +1,6 @@
 .TH _PRINTF 3 "March 2021" "0.3" "_PRINTF MAN PAGE"
 .SH NAME
-.B _printf
+.B _printf - Recreation of the printf function.
 .SH SYNOPSIS
 .B #include  """holberton.h""
 
